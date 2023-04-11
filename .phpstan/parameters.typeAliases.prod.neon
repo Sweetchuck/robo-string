@@ -1,0 +1,25 @@
+parameters:
+    typeAliases:
+        robo-string-task-options: '''
+            array{
+                string?: string,
+                queue?: array<string|robo-string-queue-item>,
+                assetNamePrefix?: string,
+            }
+        '''
+        robo-string-queue-item: '''
+            array{
+                method: string,
+                args?: array<mixed>,
+                assetName?: null|string|false,
+                weight?: int,
+            }
+        '''
+        robo-string-queue-item-full: '''
+            array{
+                method: string,
+                args: array<mixed>,
+                assetName: null|string|false,
+                weight: int,
+            }
+        '''

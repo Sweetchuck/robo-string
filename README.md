@@ -17,28 +17,35 @@ This Robo task is useful when you need to do string manipulation in a
 ```php
 <?php
 
-class RoboFile extends \Robo\Tasks
+declare(strict_types = 1);
+
+use Robo\Tasks;
+use Robo\State\Data as StateData;
+use Sweetchuck\Robo\String\StringTaskLoader;
+
+class RoboFileExample extends Tasks
 {
-    use \Sweetchuck\Robo\String\StringTaskLoader;
-    
+    use StringTaskLoader;
+
     /**
      * @command string:simple
      */
-    public function cmdStringSimple(string $text = 'Hello', string $suffix = 'World')
+    public function cmdStringSimpleExecute(string $string = 'Hello', string $suffix = 'World')
     {
         return $this
             ->collectionBuilder()
             ->addTask(
                 $this
                     ->taskStringUnicode()
-                    ->setString($text)
-                    ->callIsUpperCase()
+                    ->setString($string)
+                    ->callIsEmpty()
                     ->callAppend(" $suffix")
-                    ->callUnderscored()
+                    ->callSnake()
             )
-            ->addCode(function (\Robo\State\Data $data): int {
+            ->addCode(function (StateData $data): int {
                 $output = $this->output();
-                $output->writeln('Is upper case: ' . var_export($data['string.isUpperCase'], true));
+                $output->writeln('Is empty: ' . var_export($data['string.isEmpty'], true));
+                $output->writeln("Snake: {$data['string.snake']}");
                 $output->writeln("Result: {$data['string']}");
 
                 return 0;
@@ -49,10 +56,6 @@ class RoboFile extends \Robo\Tasks
 
 Run `vendor/bin/robo string:simple` \
 Output:
-> <pre>Is upper case: false
-> Result: hello_world</pre>
-
-Run `vendor/bin/robo string:simple FOO` \
-Output:
-> <pre>Is upper case: true
-> Result: f_o_o_world</pre>
+<pre>Is empty: false
+Snake: hello_world
+Result: hello_world</pre>
