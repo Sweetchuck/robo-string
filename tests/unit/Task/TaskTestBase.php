@@ -35,10 +35,7 @@ abstract class TaskTestBase extends Unit
 
     protected DummyTaskBuilder $taskBuilder;
 
-    /**
-     * @inheritdoc
-     */
-    public function _before()
+    public function _before(): void
     {
         parent::_before();
 
@@ -58,6 +55,7 @@ abstract class TaskTestBase extends Unit
         Robo::configureContainer($this->container, $application, $this->config, $input, $output);
         $this->container->addShared('logger', BufferingLogger::class);
 
+        // @phpstan-ignore argument.type
         $this->builder = CollectionBuilder::create($this->container, null);
         $this->taskBuilder = new DummyTaskBuilder();
         $this->taskBuilder->setContainer($this->container);

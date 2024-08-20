@@ -29,3 +29,53 @@ parameters:
 			message: "#^Call to an undefined method Sweetchuck\\\\Robo\\\\Git\\\\Task\\\\GitReadStagedFilesTask\\:\\:deferTaskConfiguration\\(\\)\\.$#"
 			count: 1
 			path: ../RoboFile.php
+
+		-
+			message: "#^PHPDoc tag @return contains unresolvable type\\.$#"
+			count: 1
+			path: ../tests/_support/Helper/Dummy/DummyTaskBuilder.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$task contains unresolvable type\\.$#"
+			count: 1
+			path: ../tests/_support/Helper/Dummy/DummyTaskBuilder.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\:\\:setString\\(\\)\\.$#"
+			count: 1
+			path: ../tests/_support/Helper/RoboFiles/StringRoboFile.php
+
+		-
+			message: "#^PHPDoc tag @return contains unresolvable type\\.$#"
+			count: 1
+			path: ../tests/_support/Helper/RoboFiles/StringRoboFile.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$task contains unresolvable type\\.$#"
+			count: 1
+			path: ../tests/_support/Helper/RoboFiles/StringRoboFile.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\|Sweetchuck\\\\Robo\\\\String\\\\Task\\\\StringUnicodeTask\\:\\:addToQueue\\(\\)\\.$#"
+			count: 1
+			path: ../tests/unit/Task/StringUnicodeTaskTest.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\|Sweetchuck\\\\Robo\\\\String\\\\Task\\\\StringUnicodeTask\\:\\:callNotExists\\(\\)\\.$#"
+			count: 1
+			path: ../tests/unit/Task/StringUnicodeTaskTest.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\|Sweetchuck\\\\Robo\\\\String\\\\Task\\\\StringUnicodeTask\\:\\:fooBar\\(\\)\\.$#"
+			count: 1
+			path: ../tests/unit/Task/StringUnicodeTaskTest.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\|Sweetchuck\\\\Robo\\\\String\\\\Task\\\\StringUnicodeTask\\:\\:setOptions\\(\\)\\.$#"
+			count: 1
+			path: ../tests/unit/Task/StringUnicodeTaskTest.php
+
+		-
+			message: "#^Call to an undefined method Robo\\\\Collection\\\\CollectionBuilder\\|Sweetchuck\\\\Robo\\\\String\\\\Task\\\\StringUnicodeTask\\:\\:setString\\(\\)\\.$#"
+			count: 1
+			path: ../tests/unit/Task/StringUnicodeTaskTest.php

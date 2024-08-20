@@ -14,7 +14,7 @@ use Sweetchuck\Robo\String\Tests\Helper\RoboFiles\StringRoboFile;
  */
 class StringUnicodeTaskCest
 {
-    public function runStringLower(AcceptanceTester $tester)
+    public function runStringLower(AcceptanceTester $tester): void
     {
         $id = 'stringLower';
         $tester->runRoboTask($id, StringRoboFile::class, 'string', 'fooBAR', 'lower');
@@ -28,7 +28,7 @@ class StringUnicodeTaskCest
         $tester->assertSame(' [String] lower' . PHP_EOL, $stdError);
     }
 
-    public function runStringUpper(AcceptanceTester $tester)
+    public function runStringUpper(AcceptanceTester $tester): void
     {
         $id = 'stringUpper';
         $tester->runRoboTask($id, StringRoboFile::class, 'string', 'fooBAR', 'upper');

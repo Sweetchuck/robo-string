@@ -1,7 +1,7 @@
 # Robo String
 
-[![CircleCI](https://circleci.com/gh/Sweetchuck/robo-string/tree/2.x.svg?style=svg)](https://circleci.com/gh/Sweetchuck/robo-string/?branch=2.x)
-[![codecov](https://codecov.io/gh/Sweetchuck/robo-string/branch/2.x/graph/badge.svg?token=HSF16OGPyr)](https://app.codecov.io/gh/Sweetchuck/robo-string/branch/2.x)
+[![CircleCI](https://circleci.com/gh/Sweetchuck/robo-string/tree/3.x.svg?style=svg)](https://circleci.com/gh/Sweetchuck/robo-string/?branch=3.x)
+[![codecov](https://codecov.io/gh/Sweetchuck/robo-string/branch/3.x/graph/badge.svg?token=HSF16OGPyr)](https://app.codecov.io/gh/Sweetchuck/robo-string/branch/3.x)
 
 This Robo task is useful when you need to do string manipulation in a
 `\Robo\State\Data`.

@@ -4,11 +4,21 @@ declare(strict_types = 1);
 
 namespace Sweetchuck\Robo\String\Tests\Unit\Task;
 
+use Codeception\Attribute\DataProvider;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversTrait;
+use Sweetchuck\Robo\String\StringTaskLoader;
+use Sweetchuck\Robo\String\Task\StringBaseTask;
+use Sweetchuck\Robo\String\Task\StringUnicodeTask;
+
 /**
  * @covers \Sweetchuck\Robo\String\Task\StringUnicodeTask
  * @covers \Sweetchuck\Robo\String\Task\StringBaseTask
  * @covers \Sweetchuck\Robo\String\StringTaskLoader
  */
+#[CoversClass(StringUnicodeTask::class)]
+#[CoversClass(StringBaseTask::class)]
+#[CoversTrait(StringTaskLoader::class)]
 class StringUnicodeTaskTest extends TaskTestBase
 {
 
@@ -19,7 +29,10 @@ class StringUnicodeTaskTest extends TaskTestBase
         return $this;
     }
 
-    public function casesRun(): array
+    /**
+     * @return array<string, mixed>
+     */
+    public static function casesRun(): array
     {
         return [
             'basic' => [
@@ -87,8 +100,10 @@ class StringUnicodeTaskTest extends TaskTestBase
     }
 
     /**
-     * @dataProvider casesRun
+     * @phpstan-param array<string, mixed> $expected
+     * @phpstan-param robo-string-task-options $options
      */
+    #[DataProvider('casesRun')]
     public function testRun(array $expected, array $options): void
     {
         $result = $this
